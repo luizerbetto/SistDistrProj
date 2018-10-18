@@ -1,5 +1,3 @@
-package MainStore;
-
 import java.sql.Date;
 
 public class Item {
