@@ -1,5 +1,3 @@
-package MainStore;
-
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -13,18 +11,28 @@ public class AdmRunnable implements Runnable {
 	}
     @Override
     public void run() {
-        JFrame frame = new JFrame("Dados Adm");
-        String id = JOptionPane.showInputDialog(frame, "id do Produto");
-        String itemName = JOptionPane.showInputDialog(frame, "Nome do Produto");
-        String quant = JOptionPane.showInputDialog(frame, "Quantidade do Produto");
-        String price = JOptionPane.showInputDialog(frame, "Pre�o do Produto");
-        String unitValor = JOptionPane.showInputDialog(frame, "Valor Unitario do Produto");
+    	int choice = 0;
+    	int position;
+    	
+    	while(choice == 0) {
+    		JFrame frame = new JFrame("Dados Adm");
+            String id = JOptionPane.showInputDialog(frame, "id do Produto");
+            String itemName = JOptionPane.showInputDialog(frame, "Nome do Produto");
+            String quant = JOptionPane.showInputDialog(frame, "Quantidade do Produto");
+            String price = JOptionPane.showInputDialog(frame, "Preço do Produto");
+            String unitValor = JOptionPane.showInputDialog(frame, "Valor Unitario do Produto");
+            
+            Item item = new Item(Integer.valueOf(id), itemName, Integer.valueOf(quant), Float.valueOf(price), Float.valueOf(unitValor));
+            count++;
+            
+            store.addList(item);
+            
+            choice = Integer.valueOf(JOptionPane.showConfirmDialog(frame, "Amazenar mais itens"));
+    	}
         
-        Item item = new Item(Integer.valueOf(id), itemName, Integer.valueOf(quant), Float.valueOf(price), Float.valueOf(unitValor));
-        count++;
+        store.printList();
+        System.out.println(store.list.get(1).getName());
         
-        store.addList(item);
-        //store.printList();
     }
 
     private void doDBProcessing() throws InterruptedException {
