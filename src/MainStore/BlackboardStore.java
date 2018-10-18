@@ -1,10 +1,12 @@
+package MainStore;
+
+import java.awt.List;
 import java.util.ArrayList;
 
 public class BlackboardStore {
 	private static int size = 8;
 	
 	public ArrayList<Item> list = new ArrayList<Item>();
-	
 	
 	public ArrayList<Item> getList(){
 		return this.list;
@@ -20,22 +22,16 @@ public class BlackboardStore {
 		}
 	}
 	
-	public boolean existInList(int id) {
+	/*public boolean existInList(int id) {
 		for (int i = 0; i < list.size(); i++) {
-			if(list.get(i).getId() == id) {
-				return true;
+			if(list.) {
+				
 			}
 		}
-		return false;
-	}
+	}*/
 	
-	public int IndexList(int id) {
-		for (int i = 0; i < list.size(); i++) {
-			if(list.get(i).getId() == id) {
-				return i;
-			}
-		}
-		return -1;//not exist
+	public Item consultList(int id) {
+		return list.get(id);
 	}
 	
 	public void removeList(int id) {

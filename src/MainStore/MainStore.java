@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -22,20 +23,24 @@ public class MainStore extends javax.swing.JFrame {
     public MainStore() {
         initComponents();
 =======
+=======
+package MainStore;
+
+>>>>>>> parent of be803e9... problema de acesso a valores resolvido - vendo sincronia
 public class MainStore {
 
     public static void main(String[] args){
     	
-    	//Criação e preenchimento da Blackboard
+    	//Cria��o e preenchimento da Blackboard
     	BlackboardStore store = new BlackboardStore();
     	
     	//criar uma tela
-    	//botão cliente
+    	//bot�o cliente
         Thread client = new Thread(new ClientRunnable(store), "client1");
         Thread adm = new Thread(new AdmRunnable(store), "amd1");
         System.out.println("Starting Runnable threads");
-        adm.start();
         client.start();
+        adm.start();
         System.out.println("MyThreads has been started");
 >>>>>>> master
         

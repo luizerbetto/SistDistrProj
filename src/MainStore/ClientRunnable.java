@@ -1,3 +1,5 @@
+package MainStore;
+
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -13,15 +15,13 @@ public class ClientRunnable implements Runnable {
     	
     	try {
 			while(store.getList().isEmpty()) {
-				Thread.sleep(10000);
+				Thread.sleep(1000);
 			}
 	        JFrame frame = new JFrame("Dados Adm");
 	        String id = JOptionPane.showInputDialog(frame, "id do Client");
 	        String quant = JOptionPane.showInputDialog(frame, "Quantidade cliente");
 	        
-	        int location = store.IndexList(Integer.valueOf(id));
-	        System.out.println(store.existInList(Integer.valueOf(id)));
-	        System.out.println(store.list.get(location).getName());
+	        System.out.println(store.consultList(1));
 	        
 
 	        /*if( ) {
