@@ -17,7 +17,7 @@ public class ClientRunnable implements Runnable {
 			while(store.getList().isEmpty()) {
 				Thread.sleep(1000);
 			}
-			JFrame frame = new JFrame("Dados Adm");
+	        JFrame frame = new JFrame("Dados Adm");
 	        String id = JOptionPane.showInputDialog(frame, "id do Client");
 	        String quant = JOptionPane.showInputDialog(frame, "Quantidade cliente");
 	        
