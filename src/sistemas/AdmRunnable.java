@@ -1,3 +1,5 @@
+package sistemas;
+
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -19,7 +21,7 @@ public class AdmRunnable implements Runnable {
             String id = JOptionPane.showInputDialog(frame, "id do Produto");
             String itemName = JOptionPane.showInputDialog(frame, "Nome do Produto");
             String quant = JOptionPane.showInputDialog(frame, "Quantidade do Produto");
-            String price = JOptionPane.showInputDialog(frame, "Preço do Produto");
+            String price = JOptionPane.showInputDialog(frame, "PreÃ§o do Produto");
             String unitValor = JOptionPane.showInputDialog(frame, "Valor Unitario do Produto");
             
             Item item = new Item(Integer.valueOf(id), itemName, Integer.valueOf(quant), Float.valueOf(price), Float.valueOf(unitValor));

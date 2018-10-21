@@ -1,4 +1,6 @@
-import java.awt.List;
+
+package sistemas;
+
 import java.util.ArrayList;
 
 public class BlackboardStore {
